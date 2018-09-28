@@ -20,4 +20,10 @@ class JSONDownloader {
         self.init(configuration: .default)
     }
     
+    func jsonTask(with request: URLRequest) -> URLSessionDataTask {
+        let task = session.dataTask(with: request) { (data, res, error) in
+            
+        }
+        return task
+    }
 }
