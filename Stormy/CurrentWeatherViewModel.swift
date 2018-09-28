@@ -15,4 +15,12 @@ struct CurrentWeatherViewModel {
     let precipitationProbability:   String
     let summary:                    String
     let icon:                       UIImage
+    
+    init(model: CurrentWeather) {
+        self.temperature = "\(roundedTemperature)º"
+        self.humidity = "\(humidityPercentage)%"
+        self.precipitationProbability = "100%"
+        self.summary = ""
+        
+    }
 }
