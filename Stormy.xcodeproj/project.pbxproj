@@ -61,11 +61,11 @@
 				972470AE20A27F0000050DF7 /* AppDelegate.swift */,
 				972470B020A27F0000050DF7 /* ViewController.swift */,
 				73161B3B215DEADC0025C0D8 /* CurrentWeather.swift */,
+				73161B3D215DEDE30025C0D8 /* CurrentWeatherViewModel.swift */,
 				972470B220A27F0000050DF7 /* Main.storyboard */,
 				972470B520A27F0100050DF7 /* Assets.xcassets */,
 				972470B720A27F0100050DF7 /* LaunchScreen.storyboard */,
 				972470BA20A27F0100050DF7 /* Info.plist */,
-				73161B3D215DEDE30025C0D8 /* CurrentWeatherViewModel.swift */,
 			);
 			path = Stormy;
 			sourceTree = "<group>";
