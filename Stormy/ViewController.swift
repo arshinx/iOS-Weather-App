@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         }
         
         // Get Data Async
+        let request = URLRequest(url: forecastURL)
         let session = URLSession(configuration: .default)
         //session.dataTask(with: URLRequest(url: forecastURL))
         
