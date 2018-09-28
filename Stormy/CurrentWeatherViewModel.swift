@@ -10,4 +10,5 @@ import Foundation
 
 struct CurrentWeatherViewModel {
     let temperature: String
+    let humidity: String
 }
