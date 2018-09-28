@@ -28,7 +28,9 @@ class ViewController: UIViewController {
         // Get Data Async
         let request = URLRequest(url: forecastURL)
         let session = URLSession(configuration: .default)
-        //session.dataTask(with: URLRequest(url: forecastURL))
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            // Body of Closure
+        }
         
         let currentWeather = CurrentWeather(temperature: 85.0, humidity: 0.8, precipProbability: 0.1, summary: "Hot!", icon: "clear-day")
         let viewModel = CurrentWeatherViewModel(model: currentWeather)
