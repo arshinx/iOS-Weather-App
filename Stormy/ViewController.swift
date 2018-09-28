@@ -21,15 +21,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let base = URL(string: "https://api.darksky.net/forecast/\(darkSkyApiKey)/")
-        let forecastURL = URL(string: "37.8267,-122.4233", relativeTo: base)
-        
-        // Get Data synchronously
-        let weatherData = try! Data(contentsOf: forecastURL!)
-        let json = try! JSONSerialization.jsonObject(with: weatherData, options: [])
-        print(json)
+        guard let forecastURL = URL(string: "37.8267,-122.4233", relativeTo: base) else {
+            return
+        }
         
         // Get Data Async
         let session = URLSession(configuration: .default)
+        //session.dataTask(with: URLRequest(url: forecastURL))
         
         let currentWeather = CurrentWeather(temperature: 85.0, humidity: 0.8, precipProbability: 0.1, summary: "Hot!", icon: "clear-day")
         let viewModel = CurrentWeatherViewModel(model: currentWeather)
