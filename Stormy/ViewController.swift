@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         let session = URLSession(configuration: .default)
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             // Body of Closure
+            let json = try! JSONSerialization.jsonObject(with: data!, options: [])
+            print(json)
         }
         
         let currentWeather = CurrentWeather(temperature: 85.0, humidity: 0.8, precipProbability: 0.1, summary: "Hot!", icon: "clear-day")
