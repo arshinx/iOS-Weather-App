@@ -17,6 +17,7 @@ struct CurrentWeatherViewModel {
     let icon:                       UIImage
     
     init(model: CurrentWeather) {
+        let roundedTemperature = Int(model.temperature)
         self.temperature = "\(roundedTemperature)º"
         self.humidity = "\(humidityPercentage)%"
         self.precipitationProbability = "100%"
