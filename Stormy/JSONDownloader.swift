@@ -24,7 +24,9 @@ class JSONDownloader {
     
     func jsonTask(with request: URLRequest, completionHandler completion: @escaping (JSON, Error) -> Void) -> URLSessionDataTask {
         let task = session.dataTask(with: request) { (data, res, error) in
-            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                
+            }
         }
         return task
     }
