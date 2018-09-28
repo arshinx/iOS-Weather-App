@@ -29,7 +29,16 @@ class JSONDownloader {
                 completion(nil, .requestFailed)
                 return
             }
+            
+            // Get Data if status is success
+            if httpResponse.statusCode == 200 {
+            }
+            // Error/Other Response handler
+            else {
+                completion(nil, .responseUnsuccessful(statusCode: httpResponse.statusCode))
+            }
         }
+        
         return task
     }
 }
