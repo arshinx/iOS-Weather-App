@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    fileprivate let darkSkyApiKey = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
