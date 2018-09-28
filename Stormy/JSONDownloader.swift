@@ -35,6 +35,10 @@ class JSONDownloader {
                 if let data = data {
                     
                     do {
+                        let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON
+                        completion(json, nil)
+                    } catch {
+                        completion(nil, .jsonParsingFailiure)
                     }
                 } else {
                     completion(nil, .invalidData) // since status code is 200/Okay
