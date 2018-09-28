@@ -19,9 +19,12 @@ struct CurrentWeatherViewModel {
     init(model: CurrentWeather) {
         let roundedTemperature = Int(model.temperature)
         self.temperature = "\(roundedTemperature)º"
+        
         let humidityPercentage = Int(model.humidity * 100)
         self.humidity = "\(humidityPercentage)%"
-        self.precipitationProbability = "100%"
+        
+        let precipitationProbabilityPercentage = Int(model.humidity * 100)
+        self.precipitationProbability = "\(precipitationProbabilityPercentage)%"
         self.summary = ""
         
     }
