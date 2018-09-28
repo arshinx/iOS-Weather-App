@@ -10,5 +10,6 @@ import Foundation
 
 class JSONDownloader {
     
+    let session: URLSession
     
 }
