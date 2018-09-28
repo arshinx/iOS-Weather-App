@@ -26,6 +26,7 @@ struct CurrentWeatherViewModel {
         let precipitationProbabilityPercentage = Int(model.humidity * 100)
         self.precipitationProbability = "\(precipitationProbabilityPercentage)%"
         self.summary = model.summary
+        self.icon = model.iconImage
         
     }
 }
