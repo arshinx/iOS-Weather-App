@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     }
     
     func displayWeather(using viewModel: CurrentWeatherViewModel) {
+        currentTemperatureLabel.text    = viewModel.temperature
+        currentHumidityLabel.text       = viewModel.humidity
+        currentPrecipitationLabel.text  = viewModel.precipitationProbability
+        currentSummaryLabel.text        = viewModel.summary
+        currentWeatherIcon.image        = viewModel.icon
     }
 }
 
