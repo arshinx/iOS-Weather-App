@@ -32,6 +32,11 @@ class JSONDownloader {
             
             // Get Data if status is success
             if httpResponse.statusCode == 200 {
+                if let data = data {
+                    
+                } else {
+                    
+                }
             }
             // Error/Other Response handler
             else {
