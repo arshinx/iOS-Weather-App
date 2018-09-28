@@ -10,5 +10,6 @@ import Foundation
 
 class DarkSkyAPIClient {
     
+    fileprivate let darkSkyApiKey = ""
     
 }
