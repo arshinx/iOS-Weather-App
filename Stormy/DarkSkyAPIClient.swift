@@ -12,4 +12,7 @@ class DarkSkyAPIClient {
     
     fileprivate let darkSkyApiKey = ""
     
+    lazy var baseURL: URL = {
+        return URL(string: "https://api.darksky.net/forecast/\(darkSkyApiKey)/")!
+    }()
 }
