@@ -34,8 +34,10 @@ class JSONDownloader {
             if httpResponse.statusCode == 200 {
                 if let data = data {
                     
+                    do {
+                    }
                 } else {
-                    
+                    completion(nil, .invalidData) // since status code is 200/Okay
                 }
             }
             // Error/Other Response handler
