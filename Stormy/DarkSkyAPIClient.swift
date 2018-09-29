@@ -15,4 +15,11 @@ class DarkSkyAPIClient {
     lazy var baseURL: URL = {
         return URL(string: "https://api.darksky.net/forecast/\(darkSkyApiKey)/")!
     }()
+    
+    typealias CurrentWeatherCompletionHandler = (CurrentWeather?, DarkSkyError?) -> Void
+    
+    func getCurrentWeather(at coordinate: Coordinate, completionhandler completion: @escaping CurrentWeatherCompletionHandler) {
+        
+        
+    }
 }
