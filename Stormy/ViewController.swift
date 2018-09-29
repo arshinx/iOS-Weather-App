@@ -84,6 +84,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // Get city and country from loc coordinates
+    func fetchCityAndCountry(from location: CLLocation, completion: @escaping (_ city: String?, _ state: String?, _ country:  String?, _ error: Error?) -> ()) {
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            completion(placemarks?.first?.locality,
+                       placemarks?.first?.administrativeArea,
+                       placemarks?.first?.country,
+                       error)
+        }
+    }
+    
     // Assign values to View Elements
     func displayWeather(using viewModel: CurrentWeatherViewModel) {
         currentTemperatureLabel.text    = viewModel.temperature
