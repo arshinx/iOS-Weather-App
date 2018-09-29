@@ -36,10 +36,15 @@ class ViewController: UIViewController {
     // Get and display current Weather data
     @IBAction func getCurrentWeather() {
         
+        // refresh animation
+        toggleRefreshAnimation(on: true)
+        
+        // get weather
         client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] (currentWeather, error) in
             if let currentWeather = currentWeather {
                 let viewModel = CurrentWeatherViewModel(model: currentWeather)
                 self.displayWeather(using: viewModel)
+                self.toggleRefreshAnimation(on: false)
             }
         }
     }
