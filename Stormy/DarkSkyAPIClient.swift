@@ -44,7 +44,10 @@ class DarkSkyAPIClient {
         let task = session.dataTask(with: request) { (data, res, error) in
             
             if let data = data {
-                
+                guard let httpResponse = res as? HTTPURLResponse else {
+                    completion(nil, DarkSkyError.requestFailed)
+                    return
+                }
             } else if let error = error {
                 completion(nil, error)
             }
