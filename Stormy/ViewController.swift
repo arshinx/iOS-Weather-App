@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     fileprivate let darkSkyApiKey = ""
 
+    let client = DarkSkyAPIClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
