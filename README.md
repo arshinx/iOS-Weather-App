@@ -15,4 +15,8 @@ C) Networking Requests & Fetching Data [Completed]
 
 D) Downloading Data Asynchronously as JSON [Completed]
 
-E) Interact with the API & Populate the View [In Progress...]
+E) Interact with the API & Populate the View [Completed]
+
+F) Refactor using Codable to simplify manual implementation [Completed]
+
+G) Detect User Location [Pending..]
