@@ -31,6 +31,7 @@ class DarkSkyAPIClient {
         self.init(configuration: .default)
     }
     
+    // Get Weather
     private func getWeather(at coordinate: Coordinate, completionhandler completion: @escaping WeatherCompletionHandler) {
         
         guard let url = URL(string: coordinate.description, relativeTo: baseURL) else {
@@ -39,6 +40,7 @@ class DarkSkyAPIClient {
         }
         
         let request = URLRequest(url: url)
+        
         // Resume the task
         task.resume()
     }
