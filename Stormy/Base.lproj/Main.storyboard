@@ -131,6 +131,7 @@
                         <outlet property="currentSummaryLabel" destination="Vmr-f9-UOm" id="fwX-ti-x58"/>
                         <outlet property="currentTemperatureLabel" destination="ONl-rO-MZL" id="4mw-Oh-nCR"/>
                         <outlet property="currentWeatherIcon" destination="gcW-66-tnH" id="4nC-lR-0o1"/>
+                        <outlet property="locationLabel" destination="AgZ-4I-q8j" id="i67-l2-ugk"/>
                         <outlet property="refreshButton" destination="7d5-eX-Uo3" id="nlr-u6-m82"/>
                     </connections>
                 </viewController>
