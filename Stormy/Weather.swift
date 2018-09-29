@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Weather {
+    let currently: CurrentWeather
+}
