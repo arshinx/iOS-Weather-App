@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     // Get and display current Weather data
-    func getCurrentWeather() {
+    @IBAction func getCurrentWeather() {
         
         client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] (currentWeather, error) in
             if let currentWeather = currentWeather {
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    @IBAction func getCurrentWeather() {
+    
         
     }
 }
