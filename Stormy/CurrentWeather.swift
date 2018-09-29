@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct CurrentWeather {
+struct CurrentWeather: Codable {
     let temperature: Double
     let humidity: Double
     let precipProbability: Double
