@@ -47,6 +47,10 @@ class DarkSkyAPIClient {
         // Resume the task
         task.resume()
     }
+    
+    func getCurrentWeather(at coordinate: Coordinate, completionHandler completion: @escaping CurrentWeatherCompletionHandler) {
+        getWeather(at: coordinate) { (weather, error) in
+            completion(weather?.currently, error)
         }
     }
 }
