@@ -31,6 +31,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            //locationManager.startUpdatingLocation()
+            let location = locationManager.location
         } else {
             // Alert user: please go to settings and enable location services for this app
         }
