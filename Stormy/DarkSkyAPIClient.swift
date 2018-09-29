@@ -46,7 +46,7 @@ class DarkSkyAPIClient {
             if let data = data {
                 
             } else if let error = error {
-                
+                completion(nil, error)
             }
         }
         // Resume the task
