@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Weather {
+struct Weather: Codable {
     let currently: CurrentWeather
 }
 
