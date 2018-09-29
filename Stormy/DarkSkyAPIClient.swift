@@ -21,6 +21,8 @@ class DarkSkyAPIClient {
     
     func getCurrentWeather(at coordinate: Coordinate, completionhandler completion: @escaping CurrentWeatherCompletionHandler) {
         
-        
+        guard let url = URL(dataRepresentation: coordinate.description, relativeTo: baseURL) else {
+            
+        }
     }
 }
