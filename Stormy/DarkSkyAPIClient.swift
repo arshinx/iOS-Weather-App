@@ -20,7 +20,7 @@ class DarkSkyAPIClient {
     typealias CurrentWeatherCompletionHandler = (CurrentWeather?, Error?) -> Void
 
     // Parse JSON
-    let decoder = JSONDecoder()
+    let decoder = JSONDecoder() // handles decoding
     let session: URLSession
     
     init(configuration: URLSessionConfiguration) {
@@ -55,6 +55,7 @@ class DarkSkyAPIClient {
                     // Check if request is successful
                     if httpResponse.statusCode == 200 {
                         do {
+                            // decode to type Weather, from data (JSON)
                             let weather = try self.decoder.decode(Weather.self, from: data)
                             completion(weather, nil)
                         } catch let error {
