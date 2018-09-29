@@ -11,3 +11,9 @@ import Foundation
 struct Weather {
     let currently: CurrentWeather
 }
+
+extension Weather {
+    
+    init?(json: [String: AnyObject]) {
+    }
+}
