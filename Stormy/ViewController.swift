@@ -69,6 +69,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     */
+    
+    //
+    func getCoordinates() -> [Double] {
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            //locationManager.startUpdatingLocation()
+            let location = locationManager.location
+            return [(location?.coordinate.latitude)!, (location?.coordinate.longitude)!]
+        } else {
+            return [37.8267, -122.4233]
+        }
+    }
+    
     // Assign values to View Elements
     func displayWeather(using viewModel: CurrentWeatherViewModel) {
         currentTemperatureLabel.text    = viewModel.temperature
