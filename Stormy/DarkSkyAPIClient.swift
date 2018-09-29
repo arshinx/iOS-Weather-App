@@ -48,6 +48,17 @@ class DarkSkyAPIClient {
                     completion(nil, DarkSkyError.requestFailed)
                     return
                 }
+                
+                // Check if request is successful
+                if httpResponse.statusCode == 200 {
+                    do {
+                        let weather = try self.decoder.decode(Weather.self, from: data)
+                        completion(weather, nil)
+                    } catch {
+                        
+                    }
+                }
+                
             } else if let error = error {
                 completion(nil, error)
             }
