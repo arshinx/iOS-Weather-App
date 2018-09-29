@@ -15,6 +15,14 @@ struct CurrentWeather: Codable {
     let precipProbability: Double
     let summary: String
     let icon: String
+    
+    enum CurrentWeatherCodingKeys: String, CodingKey {
+        case temperature = "temperature"
+        case humidity = "humidity"
+        case precipProbability = "precipProbability"
+        case summary = "summary"
+        case icon = "icon"
+    }
 }
 
 extension CurrentWeather {
