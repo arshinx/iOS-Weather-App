@@ -16,10 +16,11 @@ class DarkSkyAPIClient {
         return URL(string: "https://api.darksky.net/forecast/\(darkSkyApiKey)/")!
     }()
     
+    typealias WeatherCompletionHandler = (Weather?, DarkSkyError?) -> Void
     typealias CurrentWeatherCompletionHandler = (CurrentWeather?, DarkSkyError?) -> Void
     let downloader = JSONDownloader()
     
-    func getCurrentWeather(at coordinate: Coordinate, completionhandler completion: @escaping CurrentWeatherCompletionHandler) {
+    private func getWeather(at coordinate: Coordinate, completionhandler completion: @escaping WeatherCompletionHandler) {
         
         guard let url = URL(dataRepresentation: coordinate.description, relativeTo: baseURL) else {
             
