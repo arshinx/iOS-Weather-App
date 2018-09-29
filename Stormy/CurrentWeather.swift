@@ -37,4 +37,12 @@ extension CurrentWeather {
 }
 // Don't override the default initializer
 extension CurrentWeather {
+    
+    struct Key {
+        static let temperature = "temperature"
+        static let humidity = "humidity"
+        static let precipitationProbability = "precipProbability"
+        static let summary = "summary"
+        static let icon = "icon"
+    }
 }
