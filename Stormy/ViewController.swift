@@ -41,6 +41,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     let state = state
                     self.locationLabel.text = "\(city!), \(state!)"
                 } else {
+                    let city = "Alcatraz Island"
+                    let state = "CA"
+                    self.locationLabel.text = "\(city), \(state)"
                     print("error: \(error!)")
                 }
             }
