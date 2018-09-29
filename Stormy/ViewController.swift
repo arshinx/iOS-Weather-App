@@ -29,6 +29,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+        } else {
+            // Alert user: please go to settings and enable location services for this app
+        }
+        
         getCurrentWeather()
         
     }
