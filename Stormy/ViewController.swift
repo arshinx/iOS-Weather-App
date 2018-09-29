@@ -23,6 +23,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] (currentWeather, error) in
+            if let currentWeather = currentWeather {
+                let viewModel = CurrentWeatherViewModel(model: currentWeather)
+                self.displayWeather(using: viewModel)
             }
         }
     }
