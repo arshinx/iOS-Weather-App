@@ -44,6 +44,7 @@ class DarkSkyAPIClient {
         let task = session.dataTask(with: request) { (data, res, error) in
             
             if let data = data {
+                
                 guard let httpResponse = res as? HTTPURLResponse else {
                     completion(nil, DarkSkyError.requestFailed)
                     return
@@ -57,6 +58,8 @@ class DarkSkyAPIClient {
                     } catch let error {
                         completion(nil, error)
                     }
+                } else { // status not "success/200"
+                    completion(nil, DarkSkyError.invalidData)
                 }
                 
             } else if let error = error {
