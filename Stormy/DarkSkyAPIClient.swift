@@ -41,6 +41,14 @@ class DarkSkyAPIClient {
         
         let request = URLRequest(url: url)
         
+        let task = session.dataTask(with: request) { (data, res, error) in
+            
+            if let data = data {
+                
+            } else if let error = error {
+                
+            }
+        }
         // Resume the task
         task.resume()
     }
