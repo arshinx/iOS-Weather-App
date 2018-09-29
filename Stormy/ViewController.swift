@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentSummaryLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    fileprivate let darkSkyApiKey = ""
 
     let client = DarkSkyAPIClient()
     
