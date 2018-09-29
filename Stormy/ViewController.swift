@@ -20,20 +20,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] (currentWeather, error) in
-            if let currentWeather = currentWeather {
-                let viewModel = CurrentWeatherViewModel(model: currentWeather)
-                self.displayWeather(using: viewModel)
-            }
-        }
+        getCurrentWeather()
+        
     }
     
+    // Assign values to View Elements
     func displayWeather(using viewModel: CurrentWeatherViewModel) {
         currentTemperatureLabel.text    = viewModel.temperature
         currentHumidityLabel.text       = viewModel.humidity
         currentPrecipitationLabel.text  = viewModel.precipitationProbability
         currentSummaryLabel.text        = viewModel.summary
         currentWeatherIcon.image        = viewModel.icon
+    }
+    
+    // Get and display current Weather data
+    func getCurrentWeather() {
+        
+        client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] (currentWeather, error) in
+            if let currentWeather = currentWeather {
+                let viewModel = CurrentWeatherViewModel(model: currentWeather)
+                self.displayWeather(using: viewModel)
+            }
+        }
     }
     @IBAction func getCurrentWeather() {
         
