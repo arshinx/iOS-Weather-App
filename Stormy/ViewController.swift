@@ -52,6 +52,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    // Get user location coordinates
+    /*
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        let loc = fetchCityAndCountry(from: locations[0]) { (city, state, country, error) in
+            if error == nil {
+                let city = city
+                let state = state
+                let country = country
+                print("\(city!), \(state!), \(country!)")
+            } else {
+                print("error: \(error!)")
+            }
+        }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
+    */
     // Assign values to View Elements
     func displayWeather(using viewModel: CurrentWeatherViewModel) {
         currentTemperatureLabel.text    = viewModel.temperature
