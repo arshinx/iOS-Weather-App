@@ -35,6 +35,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             //locationManager.startUpdatingLocation()
             let location = locationManager.location
+            fetchCityAndCountry(from: location!) { (city, state, country, error) in
+                if error == nil {
+                    let city = city
+                    let state = state
+                    self.locationLabel.text = "\(city!), \(state!)"
+                } else {
+                    print("error: \(error!)")
+                }
+            }
         } else {
             // Alert user: please go to settings and enable location services for this app
         }
