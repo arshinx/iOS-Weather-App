@@ -16,8 +16,7 @@ class DarkSkyAPIClient {
         return URL(string: "https://api.darksky.net/forecast/\(darkSkyApiKey)/")!
     }()
     
-    typealias WeatherCompletionHandler = (Weather?, DarkSkyError?) -> Void
-    typealias CurrentWeatherCompletionHandler = (CurrentWeather?, DarkSkyError?) -> Void
+    typealias WeatherCompletionHandler = (Weather?, Error?) -> Void
 
     // Parse JSON
     let decoder = JSONDecoder()
