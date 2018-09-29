@@ -54,8 +54,8 @@ class DarkSkyAPIClient {
                     do {
                         let weather = try self.decoder.decode(Weather.self, from: data)
                         completion(weather, nil)
-                    } catch {
-                        
+                    } catch let error {
+                        completion(nil, error)
                     }
                 }
                 
