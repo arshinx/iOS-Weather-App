@@ -9,6 +9,7 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var currentHumidityLabel: UILabel!
     @IBOutlet weak var currentPrecipitationLabel: UILabel!
