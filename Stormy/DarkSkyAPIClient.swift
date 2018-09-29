@@ -17,6 +17,7 @@ class DarkSkyAPIClient {
     }()
     
     typealias WeatherCompletionHandler = (Weather?, Error?) -> Void
+    typealias CurrentWeatherCompletionHandler = (CurrentWeather?, Error?) -> Void
 
     // Parse JSON
     let decoder = JSONDecoder()
