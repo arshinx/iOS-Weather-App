@@ -31,6 +31,7 @@ class DarkSkyAPIClient {
         let task = downloader.jsonTask(with: request) { (json, error) in
             
         }
+    }
         }
     }
 }
