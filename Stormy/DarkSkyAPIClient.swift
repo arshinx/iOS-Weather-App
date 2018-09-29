@@ -44,6 +44,8 @@ class DarkSkyAPIClient {
                 completion(weather, nil)
             }
         }
+        // Resume the task
+        task.resume()
     }
         }
     }
