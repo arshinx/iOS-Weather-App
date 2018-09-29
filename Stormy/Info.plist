@@ -24,6 +24,8 @@
 	<string>LaunchScreen</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>We would like to use your location to show current weather!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We would like to use your location to show current weather!</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
