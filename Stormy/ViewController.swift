@@ -46,7 +46,13 @@ class ViewController: UIViewController {
     
     // Animation for while data is loading
     func toggleRefreshAnimation(on: Bool) {
+        refreshButton.isHidden = on
         
+        if on {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
     }
 }
 
