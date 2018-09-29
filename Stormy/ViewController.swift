@@ -35,5 +35,8 @@ class ViewController: UIViewController {
         currentSummaryLabel.text        = viewModel.summary
         currentWeatherIcon.image        = viewModel.icon
     }
+    @IBAction func getCurrentWeather() {
+        
+    }
 }
 
