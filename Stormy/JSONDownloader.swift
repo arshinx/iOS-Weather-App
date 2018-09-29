@@ -38,12 +38,16 @@ class JSONDownloader {
                     do {
                         let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON
                         completion(json, nil)
+                        
+                        // debugging
+                        //print(json as Any)
                     } catch {
                         completion(nil, .jsonParsingFailiure)
                     }
                 } else {
                     completion(nil, .invalidData) // since status code is 200/Okay
                 }
+                
             }
             // Error/Other Response handler
             else {

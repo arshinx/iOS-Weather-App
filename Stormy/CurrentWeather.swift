@@ -35,3 +35,6 @@ extension CurrentWeather {
         }
     }
 }
+// Don't override the default initializer
+extension CurrentWeather {
+}
