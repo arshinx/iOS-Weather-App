@@ -35,7 +35,7 @@ class DarkSkyAPIClient {
     private func getWeather(at coordinate: Coordinate, completionhandler completion: @escaping WeatherCompletionHandler) {
         
         guard let url = URL(string: coordinate.description, relativeTo: baseURL) else {
-            completion(nil, .invalidUrl)
+            completion(nil, DarkSkyError.invalidUrl)
             return
         }
         
