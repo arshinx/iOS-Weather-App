@@ -12,7 +12,12 @@ struct Coordinate {
     let latitude:   Double
     let longitude:  Double
     
-    
+    /*
+    init(latitude: Double, longitude: Double) {
+        self.latitude  = latitude
+        self.longitude = longitude
+    }
+     */
 }
 
 extension Coordinate: CustomStringConvertible {
@@ -22,7 +27,9 @@ extension Coordinate: CustomStringConvertible {
     }
     
     static var alcatrazIsland: Coordinate {
-        return Coordinate(latitude: 37.8267, longitude: -122.4233)
+        let vc = ViewController()
+        let coordinates = vc.getCoordinates()
+        return Coordinate(latitude: coordinates[0], longitude: coordinates[0])
     }
     
 }
