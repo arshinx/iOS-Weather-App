@@ -26,6 +26,8 @@ class DarkSkyAPIClient {
             completion(nil, .invalidUrl)
             return
         }
+        
+        let request = URLRequest(url: url)
             
         }
     }
