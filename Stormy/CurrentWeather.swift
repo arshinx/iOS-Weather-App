@@ -45,4 +45,7 @@ extension CurrentWeather {
         static let summary = "summary"
         static let icon = "icon"
     }
+    
+    init?(json: [String: AnyObject]) {
+    }
 }
