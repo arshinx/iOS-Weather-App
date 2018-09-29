@@ -35,6 +35,7 @@ extension CurrentWeather {
         }
     }
 }
+
 // Don't override the default initializer
 extension CurrentWeather {
     
@@ -56,5 +57,12 @@ extension CurrentWeather {
             else {
                 return nil
         }
+        
+        self.temperature = tempValue
+        self.humidity = humidityValue
+        self.precipProbability = precipitationProbabilityValue
+        self.summary = summaryStringValue
+        self.icon = iconStringValue
+        
     }
 }
