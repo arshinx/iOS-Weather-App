@@ -89,13 +89,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         toggleRefreshAnimation(on: true)
         
         // get weather
-        client.getCurrentWeather(at: Coordinate.alcatrazIsland) { [unowned self] (currentWeather, error) in
+        client.getCurrentWeather(at: Coordinate.currentLocation) { [unowned self] (currentWeather, error) in
             if let currentWeather = currentWeather {
                 let viewModel = CurrentWeatherViewModel(model: currentWeather)
                 self.displayWeather(using: viewModel)
                 self.toggleRefreshAnimation(on: false)
             }
         }
+        
+        if let location = locationManager.location {
+            
+            fetchCityAndCountry(from: location) { (city, state, country, error) in
+                print("Label location: \(location.coordinate) \(String(describing: city)), \(String(describing: state)), \(String(describing: error))")
+                if error == nil {
+                    let city = city
+                    let state = state
+                    self.locationLabel.text = "\(city!), \(state!)"
+                } else {
+                    let city = "Alcatraz Island"
+                    let state = "CA"
+                    self.locationLabel.text = "\(city), \(state)"
+                    print("error: \(error!)")
+                }
+            }
+        }
+
     }
     
     // Animation for while data is loading
