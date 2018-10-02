@@ -28,10 +28,11 @@ extension Coordinate: CustomStringConvertible {
         return "\(latitude),\(longitude)"
     }
     
-    static var alcatrazIsland: Coordinate {
+    static var currentLocation: Coordinate {
         let vc = ViewController()
-        let coordinates = vc.getCoordinates()
-        return Coordinate(latitude: coordinates[0], longitude: coordinates[0])
+        let coordinates = vc.getCoordinates().coordinate
+        return Coordinate(latitude: coordinates.latitude, longitude: coordinates.longitude)
+    }
     }
     
 }
