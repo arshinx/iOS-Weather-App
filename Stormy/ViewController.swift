@@ -36,6 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         } else {
             // Alert user: please go to settings and enable location services for this app
+            showAlert(title: "Please Enable Location Services", message: "Please enable location services from your settings so we can show weather based on your location.", actionTitle: "Okay")
         }
         
         getCurrentWeather()
