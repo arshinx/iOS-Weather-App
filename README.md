@@ -19,4 +19,4 @@ E) Interact with the API & Populate the View [Completed]
 
 F) Refactor using Codable to simplify manual implementation [Completed]
 
-G) Detect User Location [Pending..]
+G) Detect User Location [Completed]
