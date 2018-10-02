@@ -135,3 +135,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
+/*
+ Reference:
+ 
+// Check if loc services are enabled
+if let location = locationManager.location {
+    
+    fetchCityAndCountry(from: location) { (city, state, country, error) in
+        if error == nil {
+            let city = city
+            let state = state
+            self.locationLabel.text = "\(city!), \(state!)"
+        } else {
+            let city = "Alcatraz Island"
+            let state = "CA"
+            self.locationLabel.text = "\(city), \(state)"
+            print("error: \(error!)")
+        }
+    }
+}
+*/
