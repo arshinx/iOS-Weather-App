@@ -51,16 +51,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //
-    func getCoordinates() -> [Double] {
+    func getCoordinates() -> CLLocation {
+        
+        let coordinates = locationManager.location
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            //locationManager.startUpdatingLocation()
-            let location = locationManager.location
-            return [(location?.coordinate.latitude)!, (location?.coordinate.longitude)!]
+            return coordinates!
         } else {
-            return [37.8267, -122.4233]
+            // Alert user: please go to settings and enable location services for this app
+            return CLLocation(latitude: 37.8267, longitude: -122.4233)
         }
     }
     
