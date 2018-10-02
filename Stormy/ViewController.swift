@@ -95,7 +95,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.displayWeather(using: viewModel)
                 self.toggleRefreshAnimation(on: false)
             }
-            print("Current Weather Coordinates: \(Coordinate.currentLocation.latitude), \(Coordinate.currentLocation.longitude)")
+            // print("Current Weather Coordinates: \(Coordinate.currentLocation.latitude), \(Coordinate.currentLocation.longitude)")
         }
         
         if let location = locationManager.location {
