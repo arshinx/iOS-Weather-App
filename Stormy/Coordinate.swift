@@ -33,6 +33,10 @@ extension Coordinate: CustomStringConvertible {
         let coordinates = vc.getCoordinates().coordinate
         return Coordinate(latitude: coordinates.latitude, longitude: coordinates.longitude)
     }
+    
+    static var coordinateObject: CLLocation? {
+        let vc = ViewController()
+        return vc.getCoordinates()
     }
     
 }
