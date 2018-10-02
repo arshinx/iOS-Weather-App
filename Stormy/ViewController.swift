@@ -39,27 +39,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             showAlert(title: "Please Enable Location Services", message: "Please enable location services from your settings so we can show weather based on your location.", actionTitle: "Okay")
         }
         
+        // Update weather with latest data
         getCurrentWeather()
         
     }
     
     // Get user location coordinates continously
-    /*
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        let loc = fetchCityAndCountry(from: locations[0]) { (city, state, country, error) in
-            if error == nil {
-                let city = city
-                let state = state
-                let country = country
-                print("\(city!), \(state!), \(country!)")
-            } else {
-                print("error: \(error!)")
-            }
-        }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        //guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        //print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
-    */
     
     //
     func getCoordinates() -> [Double] {
